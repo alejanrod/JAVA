@@ -33,7 +33,7 @@ public class Consecionario {
 
     @Override
     public String toString() {
-        return "Consecionario{" + "nombreconsecinario=" + nombreconsecinario + ", sucursal=" + sucursal + ", direccion=" + direccion + ", correo=" + correo + ", telefono=" + telefono + ", cliente=" + cliente + ", trabajadores=" + trabajadores + ", carros=" + carros + '}';
+        return "Consecionario:" + "\n nombreconsecinario:" + nombreconsecinario + "\n sucursal:" + sucursal + "\n direccion:" + direccion + "\n correo:" + correo + "\n telefono:" + telefono + "\ntrabajadores:" + trabajadores + "\ncarros:" + carros;
     }
     
 }
