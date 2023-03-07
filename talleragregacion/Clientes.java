@@ -16,8 +16,9 @@ public class Clientes extends Personas {
 
     @Override
     public String toString() {
-        return "Clientes{" + '}';
-    }
+        return "Clientes: \n Nombre:" +getNombre()+ "\n Tipo de documento:"+ getTipoDeDocumento() +"\n numero de documento: " + getNumDocumento()+" ";
+                
+                }
     
     
 }//cierra clase
