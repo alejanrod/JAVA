@@ -27,10 +27,24 @@ public class Carros {
         this.NumeroDeAsientos = NumeroDeAsientos;
         this.kilometraje = kilometraje;
     }
+    
+     public void addcarro(String marca, int modelo, String color ){
+        this.marca = marca;
+        this.modelo = modelo;
+        this.color = color;
+    }
+    public void addcarro(String marca, String referencia, int modelo, String color, int NumeroDeAsientos, int kilometraje){
+         this.marca = marca;
+        this.referencia = referencia;
+        this.modelo = modelo;
+        this.color = color;
+        this.NumeroDeAsientos = NumeroDeAsientos;
+        this.kilometraje = kilometraje;
+    }
 
     @Override
     public String toString() {
-        return "Carros{" + "marca=" + marca + ", referencia=" + referencia + ", modelo=" + modelo + ", color=" + color + ", NumeroDeAsientos=" + NumeroDeAsientos + ", kilometraje=" + kilometraje + '}';
+        return "Carros:" + "\n marca:" + marca + "\n referencia:" + referencia + "\n modelo:" + modelo + "\n color:" + color + "\n NumeroDeAsientos:" + NumeroDeAsientos + "\n kilometraje:" + kilometraje + ' ';
     }
     
     
