@@ -25,7 +25,7 @@ public class Trabajadores extends Personas{
 
     @Override
     public String toString() {
-        return "Trabajadores{" + "cargo=" + cargo + ", salario=" + salario + ", horarioDeTrabajo=" + horarioDeTrabajo + '}';
+        return "Trabajadores:\n cargo:" + cargo + "\n salario:" + salario + "\n horarioDeTrabajo:" + horarioDeTrabajo;
     }
     
     
