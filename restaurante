@@ -1,0 +1,68 @@
+import java.util.Scanner;
+
+public class Restaurante {
+    private String[] sopas = { "Mondongo", "Ajiaco", "Menudencias", "Consomé" };
+    private double[] preciosSopas = { 10050, 9075, 8090, 7025 };
+    private String[] platosFuertes = { "Pechuga", "Mojarra", "Churrasco", "Costillas" };
+    private double[] preciosPlatosFuertes = { 15075, 18050, 17025, 20000 };
+    private String[] bebidas = { "Limonada", "Cerveza", "Jugo", "Gaseosa" };
+    private double[] preciosBebidas = { 4050, 5000, 3075, 2050 };
+    private String[] postres = { "Helado", "Malteada", "Brownie", "Galletas" };
+    private double[] preciosPostres = { 6025, 7000, 500, 3075 };
+
+    private Scanner scanner;
+
+    public Restaurante() {
+        scanner = new Scanner(System.in);
+    }
+    
+    public void mostrarMenu() {
+        System.out.println("------- Menú del Restaurante -------");
+        System.out.println("Sopas:");
+        mostrarItems(sopas, preciosSopas);
+        System.out.println("\nPlatos Fuertes:");
+        mostrarItems(platosFuertes, preciosPlatosFuertes);
+        System.out.println("\nBebidas:");
+        mostrarItems(bebidas, preciosBebidas);
+        System.out.println("\nPostres:");
+        mostrarItems(postres, preciosPostres);
+        System.out.println("------------------------------------");
+    }
+    
+    private void mostrarItems(String[] items, double[] precios) {
+        for (int i = 0; i < items.length; i++) {
+            System.out.println((i + 1) + ". " + items[i] + " - $" + precios[i]);
+        }
+    }
+
+    public double calcularTotal(int[] selecciones) {
+        double total = 0.0;
+        total += preciosSopas[selecciones[0] - 1];
+        total += preciosPlatosFuertes[selecciones[1] - 1];
+        total += preciosBebidas[selecciones[2] - 1];
+        total += preciosPostres[selecciones[3] - 1];
+        return total;
+    }
+
+    public int[] seleccionarItems() {
+        int[] selecciones = new int[4];
+        System.out.println("Seleccione un ítem de cada categoría ingresando el número correspondiente:");
+        System.out.print("Sopa: ");
+        selecciones[0] = scanner.nextInt();
+        System.out.print("Plato Fuerte: ");
+        selecciones[1] = scanner.nextInt();
+        System.out.print("Bebida: ");
+        selecciones[2] = scanner.nextInt();
+        System.out.print("Postre: ");
+        selecciones[3] = scanner.nextInt();
+        return selecciones;
+    }
+    
+    public static void main(String[] args) {
+        Restaurante restaurante = new Restaurante();
+        restaurante.mostrarMenu();
+        int[] selecciones = restaurante.seleccionarItems();
+        double total = restaurante.calcularTotal(selecciones);
+        System.out.println("El total a pagar es: $" + total);
+    }
+}
